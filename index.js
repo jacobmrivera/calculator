@@ -11,6 +11,9 @@ const multiply = function(a, b) {
 };
 
 const divide = function(a, b) {
+    if (b == 0) {
+        return "Cannot divide by 0";
+    }
     return a / b;
 };
 
@@ -48,9 +51,18 @@ function storeOperation (operation) {
 }
 
 function equals() {
-    document.querySelector('#results').textContent = operate(oper, parseInt(firstNumString),parseInt(secondNumString));
-    firstNumString = "";
-    secondNumString = "";
+    if (oper === "") {
+        window.alert("Please use an operator before clicking equals symbol");
+    }else {
+        let answer =  operate(oper, parseInt(firstNumString),parseInt(secondNumString));
+        if (parseInt(answer) !== answer) {
+            answer = answer.toFixed(3)
+        }
+        document.querySelector('#results').textContent = answer;
+        firstNumString = "";
+        secondNumString = "";
+    }
+
 }
 
 function cleanUp() {

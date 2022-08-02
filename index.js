@@ -32,9 +32,17 @@ function pressNum (num) {
 
 
 function storeOperation (operation) {
-    oper = operation;
-    c = 'b'
-    firstNumString = document.querySelector('#results').textContent;
+    if (firstNumString !== "" && secondNumString !== "") {
+        firstNumString = operate(operation, parseInt(firstNumString),parseInt(secondNumString));
+        console.log(firstNumString);
+        console.log(secondNumString);
+    }
+    else {
+        oper = operation;
+        c = 'b'
+        firstNumString = document.querySelector('#results').textContent;
+    }
+    
     document.querySelector('#results').textContent = "";
     secondNumString = "";
 }
@@ -43,6 +51,12 @@ function equals() {
     document.querySelector('#results').textContent = operate(oper, parseInt(firstNumString),parseInt(secondNumString));
     firstNumString = "";
     secondNumString = "";
+}
+
+function cleanUp() {
+    firstNumString = "";
+    secondNumString = "";
+    document.querySelector('#results').textContent = "";
 }
 
 let c = 'a';

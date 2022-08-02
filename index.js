@@ -23,20 +23,30 @@ function operate (func, a, b) {
 
 
 function pressNum (num) {
+
+    
     if (c === 'a') {
+        if (num === '.' && firstNumString.includes('.')){
+            return
+        }
         firstNumString = firstNumString + num;
         document.querySelector('#results').textContent = firstNumString;
     } else if (c === 'b') {
+        if (num === '.' && secondNumString.includes('.')){
+            return
+        }
         secondNumString = secondNumString + num;
         document.querySelector('#results').textContent = secondNumString;
 
     }
+
+
 }
 
 
 function storeOperation (operation) {
     if (firstNumString !== "" && secondNumString !== "") {
-        firstNumString = operate(operation, parseInt(firstNumString),parseInt(secondNumString));
+        firstNumString = operate(operation, parseFloat(firstNumString),parseFloat(secondNumString));
         console.log(firstNumString);
         console.log(secondNumString);
     }
@@ -54,7 +64,7 @@ function equals() {
     if (oper === "") {
         window.alert("Please use an operator before clicking equals symbol");
     }else {
-        let answer =  operate(oper, parseInt(firstNumString),parseInt(secondNumString));
+        let answer =  operate(oper, parseFloat(firstNumString),parseFloat(secondNumString));
         if (parseInt(answer) !== answer) {
             answer = answer.toFixed(3)
         }

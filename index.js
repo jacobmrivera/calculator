@@ -11,9 +11,6 @@ const multiply = function(a, b) {
 };
 
 const divide = function(a, b) {
-    if (b == 0) {
-        return "Cannot divide by 0";
-    }
     return a / b;
 };
 
@@ -60,10 +57,17 @@ function equals() {
     } else if (secondNumString === "" ) {
         window.alert("Please enter a second number before clicking equals symbol");
     } else {
-        let answer =  operate(oper, parseFloat(firstNumString),parseFloat(secondNumString));
-        if (parseInt(answer) !== answer) {
-            answer = answer.toFixed(3)
+        let answer = ""
+        
+        if (parseInt(secondNumString) === 0) {
+            answer = "Cannot divide by 0";
+        } else {
+            answer =  operate(oper, parseFloat(firstNumString),parseFloat(secondNumString));
+            if (parseInt(answer) !== answer) {
+                answer = answer.toFixed(3)
+            }
         }
+    
         document.querySelector('#results').textContent = answer;
         firstNumString = "";
         secondNumString = "";

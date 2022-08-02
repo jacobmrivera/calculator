@@ -13,31 +13,38 @@
         <div id="results">1234567890</div>
         <div id="buttons">
             <div class="row">
+                <button id="clear">Clear</button>
+                <button id="add" onclick="storeOperation(add)">+</button>
+            </div>
+            <div class="row">
                 <button id="1" onclick="pressNum('1')">1</button>
                 <button id="2" onclick="pressNum('2')">2</button>
                 <button id="3" onclick="pressNum('3')">3</button>
-                <button id="add" onclick="storeOperation(add)">+</button>
+                <button id="subtract" onclick="storeOperation(subtract)">-</button>
 
             </div>
             <div class="row">
                 <button id="4" onclick="pressNum('4')">4</button>
                 <button id="5" onclick="pressNum('5')">5</button>
                 <button id="6" onclick="pressNum('6')">6</button>
-                <button id="add" onclick="storeOperation(subtract)">-</button>
+                <button id="multiply" onclick="storeOperation(multiply)">*</button>
+
             </div>
             <div class="row">
                 <button id="7" onclick="pressNum('7')">7</button>
                 <button id="8" onclick="pressNum('8')">8</button>
                 <button id="9" onclick="pressNum('9')">9</button>
+                <button id="divide" onclick="storeOperation(divide)">/</button>
+
             </div>
             <div class="row">
                 <button id="dot">.</button>
                 <button id="0" onclick="pressNum('0')">0</button>
                 <button id="equal" onclick="equals()">=</button>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <button id="clear">Clear</button>
-            </div>
+            </div> -->
         </div>
 
     </div>

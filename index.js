@@ -21,10 +21,7 @@ function operate (func, a, b) {
     return (func(a ,b));
 }
 
-
-function pressNum (num) {
-
-    
+function pressNum (num) {    
     if (c === 'a') {
         if (num === '.' && firstNumString.includes('.')){
             return
@@ -37,12 +34,8 @@ function pressNum (num) {
         }
         secondNumString = secondNumString + num;
         document.querySelector('#results').textContent = secondNumString;
-
     }
-
-
 }
-
 
 function storeOperation (operation) {
     if (firstNumString !== "" && secondNumString !== "") {
@@ -55,15 +48,18 @@ function storeOperation (operation) {
         c = 'b'
         firstNumString = document.querySelector('#results').textContent;
     }
-    
     document.querySelector('#results').textContent = "";
     secondNumString = "";
 }
 
 function equals() {
-    if (oper === "") {
-        window.alert("Please use an operator before clicking equals symbol");
-    }else {
+    if (firstNumString === "") {
+        window.alert("Please enter a number"); 
+    } else if (oper === "" && secondNumString === "") {
+        window.alert("Please complete the operation before clicking equals symbol");
+    } else if (secondNumString === "" ) {
+        window.alert("Please enter a second number before clicking equals symbol");
+    } else {
         let answer =  operate(oper, parseFloat(firstNumString),parseFloat(secondNumString));
         if (parseInt(answer) !== answer) {
             answer = answer.toFixed(3)
@@ -72,7 +68,6 @@ function equals() {
         firstNumString = "";
         secondNumString = "";
     }
-
 }
 
 function cleanUp() {

@@ -1,11 +1,9 @@
-
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #FFF9CA;
 }
-
 
 #calculator {
     margin: 10%;
@@ -23,9 +21,6 @@ body {
     justify-content: right;
     padding-right: .5em;
     background-color: #FFDEB4;
-
-
-
 }
 
 .row{

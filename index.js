@@ -30,7 +30,23 @@ function pressNum (num) {
     }
 }
 
+
+function storeOperation (operation) {
+    oper = operation;
+    c = 'b'
+    firstNumString = document.querySelector('#results').textContent;
+    document.querySelector('#results').textContent = "";
+    secondNumString = "";
+}
+
+function equals() {
+    document.querySelector('#results').textContent = operate(oper, parseInt(firstNumString),parseInt(secondNumString));
+    firstNumString = "";
+    secondNumString = "";
+}
+
 let c = 'a';
+let oper = "";
 
 let firstNumString = "";
 let secondNumString = "";

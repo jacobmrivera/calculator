@@ -81,6 +81,17 @@ function cleanUp() {
     document.querySelector('#results').textContent = "";
 }
 
+function back() {
+    if (c === 'a' && firstNumString.length > 0) {
+        firstNumString = firstNumString.slice(0, -1);
+        document.querySelector('#results').textContent = firstNumString;
+    } else if (c === 'b' && secondNumString.length > 0) {
+        secondNumString = secondNumString.slice(0, -1);
+        document.querySelector('#results').textContent = secondNumString;
+    }
+    console.log("got into back")
+}
+
 let c = 'a';
 let oper = "";
 
